@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Agent Logo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo-display {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        label {
+            font-size: 0.9em;
+            color: #555;
+            font-weight: 600;
+        }
+
+        input[type="range"] {
+            width: 150px;
+            cursor: pointer;
+        }
+
+        input[type="color"] {
+            width: 60px;
+            height: 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        select {
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+            font-size: 0.9em;
+            cursor: pointer;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+            margin-top: 20px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .value-display {
+            font-size: 0.85em;
+            color: #888;
+        }
+
+        svg {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Business Agent Logo</h1>
+
+        <div class="logo-container">
+            <div class="logo-display" id="logoDisplay">
+                <svg id="logo" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Background circle -->
+                    <circle cx="150" cy="150" r="145" fill="none" stroke="#E8EEF5" stroke-width="2" opacity="0.5"/>
+
+                    <!-- Abstract human figure -->
+                    <g id="figure">
+                        <!-- Head -->
+                        <circle cx="150" cy="80" r="25" fill="#2C5AA0" opacity="0.9"/>
+
+                        <!-- Body - abstract geometric shape -->
+                        <path d="M 150 110 L 130 140 L 130 180 L 150 190 L 170 180 L 170 140 Z"
+                              fill="url(#bodyGradient)" opacity="0.95"/>
+
+                        <!-- Arms -->
+                        <path d="M 130 145 L 105 155 L 110 165 L 130 158"
+                              fill="#4A7BC8" opacity="0.9"/>
+                        <path d="M 170 145 L 195 155 L 190 165 L 170 158"
+                              fill="#4A7BC8" opacity="0.9"/>
+
+                        <!-- Legs -->
+                        <path d="M 140 190 L 135 230 L 145 232 L 148 190"
+                              fill="#2C5AA0" opacity="0.9"/>
+                        <path d="M 160 190 L 165 230 L 155 232 L 152 190"
+                              fill="#2C5AA0" opacity="0.9"/>
+                    </g>
+
+                    <!-- Briefcase -->
+                    <g id="briefcase">
+                        <!-- Main briefcase body -->
+                        <rect x="175" y="150" width="55" height="40" rx="3"
+                              fill="url(#briefcaseGradient)" opacity="0.95"/>
+
+                        <!-- Handle -->
+                        <path d="M 190 150 Q 202.5 140 215 150"
+                              stroke="#6B8EC4" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+                        <!-- Lock detail -->
+                        <circle cx="202.5" cy="170" r="4" fill="#C0D0E8"/>
+
+                        <!-- Side lines for depth -->
+                        <line x1="202.5" y1="150" x2="202.5" y2="190" stroke="#94B0D8" stroke-width="1.5" opacity="0.6"/>
+                    </g>
+
+                    <!-- Decorative circles - representing connectivity/network -->
+                    <circle cx="75" cy="100" r="8" fill="#C0D0E8" opacity="0.5"/>
+                    <circle cx="225" cy="220" r="10" fill="#94B0D8" opacity="0.4"/>
+                    <circle cx="90" cy="200" r="6" fill="#E8EEF5" opacity="0.6"/>
+                    <circle cx="240" cy="110" r="7" fill="#C0D0E8" opacity="0.5"/>
+
+                    <!-- Connecting lines -->
+                    <line x1="75" y1="100" x2="125" y2="80" stroke="#E8EEF5" stroke-width="1.5" opacity="0.3"/>
+                    <line x1="225" y1="220" x2="165" y2="230" stroke="#E8EEF5" stroke-width="1.5" opacity="0.3"/>
+
+                    <!-- Gradients -->
+                    <defs>
+                        <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4A7BC8;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#2C5AA0;stop-opacity:1" />
+                        </linearGradient>
+
+                        <linearGradient id="briefcaseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#94B0D8;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#6B8EC4;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label for="size">Size</label>
+                    <input type="range" id="size" min="200" max="500" value="300">
+                    <span class="value-display" id="sizeValue">300px</span>
+                </div>
+
+                <div class="control-group">
+                    <label for="primaryColor">Primary Color</label>
+                    <input type="color" id="primaryColor" value="#2C5AA0">
+                </div>
+
+                <div class="control-group">
+                    <label for="secondaryColor">Secondary Color</label>
+                    <input type="color" id="secondaryColor" value="#94B0D8">
+                </div>
+
+                <div class="control-group">
+                    <label for="background">Background</label>
+                    <select id="background">
+                        <option value="transparent">Transparent</option>
+                        <option value="white">White</option>
+                        <option value="light">Light Gray</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="download-btn" onclick="downloadLogo()">Download SVG</button>
+        </div>
+    </div>
+
+    <script>
+        const logo = document.getElementById('logo');
+        const logoDisplay = document.getElementById('logoDisplay');
+        const sizeInput = document.getElementById('size');
+        const sizeValue = document.getElementById('sizeValue');
+        const primaryColorInput = document.getElementById('primaryColor');
+        const secondaryColorInput = document.getElementById('secondaryColor');
+        const backgroundSelect = document.getElementById('background');
+
+        // Update size
+        sizeInput.addEventListener('input', (e) => {
+            const size = e.target.value;
+            logo.setAttribute('width', size);
+            logo.setAttribute('height', size);
+            sizeValue.textContent = size + 'px';
+        });
+
+        // Update colors
+        function updateColors() {
+            const primaryColor = primaryColorInput.value;
+            const secondaryColor = secondaryColorInput.value;
+
+            // Update head
+            logo.querySelector('circle[cy="80"]').setAttribute('fill', primaryColor);
+
+            // Update body gradient
+            const bodyGradient = logo.querySelector('#bodyGradient');
+            bodyGradient.querySelector('stop[offset="0%"]').style.stopColor = adjustBrightness(primaryColor, 40);
+            bodyGradient.querySelector('stop[offset="100%"]').style.stopColor = primaryColor;
+
+            // Update arms and legs
+            logo.querySelectorAll('g#figure path').forEach(path => {
+                if (path.getAttribute('fill') && !path.getAttribute('fill').includes('url')) {
+                    path.setAttribute('fill', adjustBrightness(primaryColor, 30));
+                }
+            });
+
+            // Update briefcase gradient
+            const briefcaseGradient = logo.querySelector('#briefcaseGradient');
+            briefcaseGradient.querySelector('stop[offset="0%"]').style.stopColor = secondaryColor;
+            briefcaseGradient.querySelector('stop[offset="100%"]').style.stopColor = adjustBrightness(secondaryColor, -20);
+
+            // Update decorative elements
+            logo.querySelectorAll('g#briefcase path, g#briefcase circle, g#briefcase line').forEach(el => {
+                if (el.getAttribute('stroke')) {
+                    el.setAttribute('stroke', adjustBrightness(secondaryColor, -10));
+                }
+                if (el.getAttribute('fill') && el.tagName === 'circle') {
+                    el.setAttribute('fill', adjustBrightness(secondaryColor, 30));
+                }
+            });
+        }
+
+        // Adjust color brightness
+        function adjustBrightness(color, percent) {
+            const num = parseInt(color.replace("#", ""), 16);
+            const amt = Math.round(2.55 * percent);
+            const R = (num >> 16) + amt;
+            const G = (num >> 8 & 0x00FF) + amt;
+            const B = (num & 0x0000FF) + amt;
+            return "#" + (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 +
+                (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 +
+                (B < 255 ? B < 1 ? 0 : B : 255))
+                .toString(16).slice(1);
+        }
+
+        primaryColorInput.addEventListener('input', updateColors);
+        secondaryColorInput.addEventListener('input', updateColors);
+
+        // Update background
+        backgroundSelect.addEventListener('change', (e) => {
+            const bg = e.target.value;
+            switch(bg) {
+                case 'transparent':
+                    logoDisplay.style.background = '#f8f9fa';
+                    break;
+                case 'white':
+                    logoDisplay.style.background = '#ffffff';
+                    break;
+                case 'light':
+                    logoDisplay.style.background = '#e9ecef';
+                    break;
+                case 'dark':
+                    logoDisplay.style.background = '#2c3e50';
+                    break;
+            }
+        });
+
+        // Download function
+        function downloadLogo() {
+            const svgData = logo.outerHTML;
+            const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
+            const svgUrl = URL.createObjectURL(svgBlob);
+            const downloadLink = document.createElement('a');
+            downloadLink.href = svgUrl;
+            downloadLink.download = 'business-agent-logo.svg';
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+            URL.revokeObjectURL(svgUrl);
+        }
+    </script>
+</body>
+</html>
